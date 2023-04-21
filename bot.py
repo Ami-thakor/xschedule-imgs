@@ -35,7 +35,14 @@ def download_image(url, file_name):
 with open('images.txt', 'r') as file:
     photos = file.readlines()
 
-
+# Define a handler for the /send command
+@client.on_message(filters.private & filters.command("start"))
+def start_command_handler(_, message):
+   return message.reply_text("Already Started")
+  
+      
+    
+    
 run = 0
 
 
