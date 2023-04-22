@@ -17,7 +17,10 @@ CHAT_ID = int(os.environ.get('CHAT_ID',
 client = Client("my_bot", api_id=API_ID,
                 api_hash=API_HASH, bot_token=BOT_TOKEN)
 
-
+directory_path = 'imgs'
+if not os.path.exists(directory_path):
+        os.makedirs(directory_path)
+    
 def download_image(url, file_name):
     try:
         response = requests.get(url, stream=True)
